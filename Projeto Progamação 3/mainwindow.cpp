@@ -96,11 +96,13 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButtonMudaTamanho_clicked()
 {
     Dialog d;
-    d.exec();
-    dimx =d.pegaDimx();
-    dimy = d.pegaDimy();
-    dimz = d.pegaDimz();
-    ui->widget->mudaDim(dimx.toInt(),dimy.toInt(),dimz.toInt());
+    if(d.exec() == QDialog::Accepted){
+        dimx =d.pegaDimx();
+        dimy = d.pegaDimy();
+        dimz = d.pegaDimz();
+        ui->widget->mudaDim(dimx.toInt(),dimy.toInt(),dimz.toInt());
+    }
+
 
 }
 

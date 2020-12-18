@@ -14,8 +14,20 @@ class Dialog : public QDialog
 public:
     explicit Dialog(QWidget *parent = nullptr);
     ~Dialog();
+    /**
+     * @brief pegaDimx Tem objetivo de recuperar o valor da dimesão x da  matriz
+     * @return retorna o valor do elemento digitado na caixa de texto que corresponde a dimensão x da matriz
+     */
     QString pegaDimx();
+    /**
+     * @brief pegaDimy Tem objetivo de recuperar o valor da dimesão y da  matriz
+     * @return retorna o valor do elemento digitado na caixa de texto que corresponde a dimensão y da matriz
+     */
     QString pegaDimy();
+    /**
+     * @brief pegaDimz Tem objetivo de recuperar o valor da dimesão z da  matriz
+     * @return retorna o valor do elemento digitado na caixa de texto que corresponde a dimensão z da matriz
+     */
     QString pegaDimz();
 private:
     Ui::Dialog *ui;

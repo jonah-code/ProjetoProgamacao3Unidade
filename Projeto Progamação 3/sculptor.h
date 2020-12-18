@@ -131,12 +131,37 @@ public:
    * @param filename recebe o nome do aquivo para ser exportado
    */
   void writeOFF(char* filename);
-
+  /**
+   * @brief getisOn tem como objetivo verificar quais voxel estao ativos
+   * @param x recebe valor da posicao x
+   * @param y recebe valor da posicao z
+   * @param z recebe valor da posicao z
+   * @return retorna true se estiver ativo e false se estiver desativada
+   */
   bool getisOn(int x,int y,int z);
-
+  /**
+   * @brief getR verifica qual cor esta na posicao especificada
+   * @param x recebe valor da posicao x
+   * @param y recebe valor da posicao z
+   * @param z recebe valor da posicao z
+   * @return retorna a cor na posicao passada
+   */
   float getR(int x,int y,int z);
-
+  /**
+   * @brief getG verifica qual cor esta na posicao especificada
+   * @param x recebe valor da posicao x
+   * @param y recebe valor da posicao z
+   * @param z recebe valor da posicao z
+   * @return retorna a cor na posicao passada
+   */
   float getG(int x,int y,int z);
+  /**
+   * @brief getB verifica qual cor esta na posicao especificada
+   * @param x recebe valor da posicao x
+   * @param y recebe valor da posicao z
+   * @param z recebe valor da posicao z
+   * @return retorna a cor na posicao passada
+   */
 
   float getB(int x,int y,int z);
 };
