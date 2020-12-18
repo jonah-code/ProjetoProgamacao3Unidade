@@ -82,7 +82,7 @@ void Ploter::paintEvent(QPaintEvent *event)
 void Ploter::mousePressEvent(QMouseEvent *event)
 {
     px=(event->x())/(width()/x);
-    py=(event->y())/(height()/y); //calcula em que quadrado na vertica se encontra o mouse
+    py=(event->y())/(height()/y);
     if(putvoxel){
         matriz->setColor(corR,corG,corB,a);
         matriz->putVoxel(px,py,pz);
