@@ -39,9 +39,9 @@ public:
 signals:
 
 public slots:
-    void mudaDimx(int dimx);
-    void mudaDimy(int dimy);
-    void mudaDimz(int dimz);
+    //void mudaDimx(int dimx);
+    //void mudaDimy(int dimy);
+    //void mudaDimz(int dimz);
     void mudaRaio(int raio);
     void mudarx(int raiox);
     void mudary(int raioy);

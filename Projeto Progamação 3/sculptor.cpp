@@ -185,12 +185,12 @@ void Sculptor::writeOFF(char *filename){
         for(int y=0;y<ny;y++){
             for(int z=0;z<nz;z++){
                 if(v[x][y][z].isOn){
-                    arquivo << 4 <<" " <<i+0 << " " <<i+3<< " " <<i+2<< " " <<i+1<< " "<<fixed<<setprecision(2) <<v[x][y][z].r<< " "<<fixed<<setprecision(2) <<v[x][y][z].g<< " " <<fixed<<setprecision(2)<<v[x][y][z].b<<endl;
-                    arquivo << 4 <<" " <<i+4 << " " <<i+5<< " " <<i+6<< " " <<i+7<< " "<<fixed<<setprecision(2) <<v[x][y][z].r<< " "<<fixed<<setprecision(2) <<v[x][y][z].g<< " " <<fixed<<setprecision(2)<<v[x][y][z].b<<endl;
-                    arquivo << 4 <<" " <<i+0 << " " <<i+1<< " " <<i+5<< " " <<i+4<< " "<<fixed<<setprecision(2) <<v[x][y][z].r<< " "<<fixed<<setprecision(2) <<v[x][y][z].g<< " " <<fixed<<setprecision(2)<<v[x][y][z].b<<endl;
-                    arquivo << 4 <<" " <<i+0 << " " <<i+4<< " " <<i+7<< " " <<i+3<< " "<<fixed<<setprecision(2) <<v[x][y][z].r<< " "<<fixed<<setprecision(2) <<v[x][y][z].g<< " " <<fixed<<setprecision(2)<<v[x][y][z].b<<endl;
-                    arquivo << 4 <<" " <<i+3 << " " <<i+7<< " " <<i+6<< " " <<i+2<< " "<<fixed<<setprecision(2) <<v[x][y][z].r<< " "<<fixed<<setprecision(2) <<v[x][y][z].g<< " " <<fixed<<setprecision(2)<<v[x][y][z].b<<endl;
-                    arquivo << 4 <<" " <<i+1 << " " <<i+2<< " " <<i+6<< " " <<i+5<< " "<<fixed<<setprecision(2) <<v[x][y][z].r<< " "<<fixed<<setprecision(2) <<v[x][y][z].g<< " " <<fixed<<setprecision(2)<<v[x][y][z].b<<endl;
+                    arquivo << 4 <<" " <<i+0 << " " <<i+3<< " " <<i+2<< " " <<i+1<< " "<<fixed<<setprecision(2) <<v[x][y][z].r<< " "<<fixed<<setprecision(2) <<v[x][y][z].g<< " " <<fixed<<setprecision(2)<<v[x][y][z].b<< " " <<fixed<<setprecision(2)<<v[x][y][z].a<<endl;
+                    arquivo << 4 <<" " <<i+4 << " " <<i+5<< " " <<i+6<< " " <<i+7<< " "<<fixed<<setprecision(2) <<v[x][y][z].r<< " "<<fixed<<setprecision(2) <<v[x][y][z].g<< " " <<fixed<<setprecision(2)<<v[x][y][z].b<< " " <<fixed<<setprecision(2)<<v[x][y][z].a<<endl;
+                    arquivo << 4 <<" " <<i+0 << " " <<i+1<< " " <<i+5<< " " <<i+4<< " "<<fixed<<setprecision(2) <<v[x][y][z].r<< " "<<fixed<<setprecision(2) <<v[x][y][z].g<< " " <<fixed<<setprecision(2)<<v[x][y][z].b<< " " <<fixed<<setprecision(2)<<v[x][y][z].a<<endl;
+                    arquivo << 4 <<" " <<i+0 << " " <<i+4<< " " <<i+7<< " " <<i+3<< " "<<fixed<<setprecision(2) <<v[x][y][z].r<< " "<<fixed<<setprecision(2) <<v[x][y][z].g<< " " <<fixed<<setprecision(2)<<v[x][y][z].b<< " " <<fixed<<setprecision(2)<<v[x][y][z].a<<endl;
+                    arquivo << 4 <<" " <<i+3 << " " <<i+7<< " " <<i+6<< " " <<i+2<< " "<<fixed<<setprecision(2) <<v[x][y][z].r<< " "<<fixed<<setprecision(2) <<v[x][y][z].g<< " " <<fixed<<setprecision(2)<<v[x][y][z].b<< " " <<fixed<<setprecision(2)<<v[x][y][z].a<<endl;
+                    arquivo << 4 <<" " <<i+1 << " " <<i+2<< " " <<i+6<< " " <<i+5<< " "<<fixed<<setprecision(2) <<v[x][y][z].r<< " "<<fixed<<setprecision(2) <<v[x][y][z].g<< " " <<fixed<<setprecision(2)<<v[x][y][z].b<< " " <<fixed<<setprecision(2)<<v[x][y][z].a<<endl;
                 i+=8;
                 }
             }

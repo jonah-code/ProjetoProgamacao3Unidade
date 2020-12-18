@@ -76,37 +76,7 @@ void Ploter::paintEvent(QPaintEvent *event)
                 }
             }
     }
-   /*
-    for(int i=0;i<x;i++){
-           for(int j=0;j<y;j++){
-                   painter.drawRect(i*(larg/x),j*(alt/y),larg/x,alt/y); // pinta o quadrado
 
-
-                   if(clicado){
-                       for(int i=0;i<x;i++){
-                              for(int j=0;j<y;j++){
-                       brush.setColor(QColor(100,0,0));
-                       painter.setBrush(brush);
-                       painter.drawRect(i*(larg/x),j*(alt/y),larg/x,alt/y);
-                               }
-                        }
-                   }
-
-               }
-           }
-
-    pen.setColor(QColor(255,180,0));
-    painter.setPen(pen);
-    painter.drawLine(0,height()/2,width(),height()/2);
-    x1 = 0;
-    y1 = height()/2;
-    for(int i=1; i<width();i++){
-        x2 = i;
-        y2 = height()/2*(1- amplitude*sin(2*PI*x2/width()));
-        painter.drawLine(x1,y1,x2,y2);
-        x1=x2;
-        y1=y2;
-    }*/
 }
 
 void Ploter::mousePressEvent(QMouseEvent *event)
@@ -115,67 +85,35 @@ void Ploter::mousePressEvent(QMouseEvent *event)
     py=(event->y())/(height()/y); //calcula em que quadrado na vertica se encontra o mouse
     if(putvoxel){
         matriz->setColor(corR,corG,corB,a);
-        //qDebug()<<"dentro";
-       // qDebug()<<px;
-        //qDebug()<<py;
-        //qDebug()<<z;
-        //qDebug()<<corR;
-        //qDebug()<<corG;
-        //qDebug()<<corB;
         matriz->putVoxel(px,py,pz);
         repaint();
 
     }if(putEsfera){
         matriz->setColor(corR,corG,corB,a);
-        qDebug() <<px;
         matriz->putSphere(px,py,pz,r);
         repaint();
-        qDebug() <<r;
     }if(putElipse){
         matriz->setColor(corR,corG,corB,a);
-        qDebug() <<px;
-        qDebug() <<rx;
-        qDebug() <<ry;
-        qDebug() <<rz;
         matriz->putEllipsoid(px,py,pz,rx,ry,rz);
         repaint();
     }
     if(putCaixa){
         matriz->setColor(corR,corG,corB,a);
-        clicado = true;
-        qDebug() <<px;
-        qDebug() <<py;
-        qDebug() <<z;
         matriz->putBox(px,px+dimxq,py,py+dimyq,pz,pz+dimzq);
         repaint();
     }
     if(cutvoxel){
-        qDebug()<<"dentro";
-        qDebug()<<px;
-        qDebug()<<py;
-        qDebug()<<z;
         matriz->cutVoxel(px,py,pz);
         repaint();
 
     }if(cutEsfera){
-        qDebug() <<px;
         matriz->cutSphere(px,py,pz,r);
         repaint();
-        qDebug() <<r;
     }if(cutElipse){
-        qDebug() <<px;
-        qDebug() <<rx;
-        qDebug() <<ry;
-        qDebug() <<rz;
         matriz->cutEllipsoid(px,py,pz,rx,ry,rz);
         repaint();
     }
     if(cutCaixa){        
-        qDebug() <<px;
-        qDebug() <<py;
-        qDebug() <<dimxq;
-        qDebug() <<dimyq;
-        qDebug() <<dimzq;
         matriz->cutBox(px,px+dimxq,py,py+dimyq,pz,pz+dimzq);
         repaint();
     }
@@ -190,73 +128,41 @@ void Ploter::mouseMoveEvent(QMouseEvent *event)
     if(putvoxel){
 
         matriz->setColor(corR,corG,corB,a);
-       // qDebug()<<"dentro";
-        //qDebug()<<px;
-       // qDebug()<<py;
-        //qDebug()<<z;
-        //qDebug()<<corR;
-        //qDebug()<<corG;
-        //qDebug()<<corB;
         matriz->putVoxel(px,py,pz);
         repaint();
 
     }if(putEsfera){
         matriz->setColor(corR,corG,corB,a);
-        qDebug() <<px;
         matriz->putSphere(px,py,pz,r);
         repaint();
-        qDebug() <<r;
     }if(putElipse){
         matriz->setColor(corR,corG,corB,a);
-        qDebug() <<px;
-        qDebug() <<rx;
-        qDebug() <<ry;
-        qDebug() <<rz;
         matriz->putEllipsoid(px,py,pz,rx,ry,rz);
         repaint();
     }
     if(putCaixa){
         matriz->setColor(corR,corG,corB,a);
-        clicado = true;
-        qDebug() <<px;
-        qDebug() <<py;
-        qDebug() <<z;
         matriz->putBox(px,px+dimxq,py,py+dimyq,pz,pz+dimzq);
         repaint();
     }
     if(cutvoxel){
-        qDebug()<<"dentro";
-        qDebug()<<px;
-        qDebug()<<py;
-        qDebug()<<z;
         matriz->cutVoxel(px,py,pz);
         repaint();
 
     }if(cutEsfera){
-        qDebug() <<px;
         matriz->cutSphere(px,py,pz,r);
         repaint();
-        qDebug() <<r;
     }if(cutElipse){
-        qDebug() <<px;
-        qDebug() <<rx;
-        qDebug() <<ry;
-        qDebug() <<rz;
         matriz->cutEllipsoid(px,py,pz,rx,ry,rz);
         repaint();
     }
     if(cutCaixa){
-        qDebug() <<px;
-        qDebug() <<py;
-        qDebug() <<dimxq;
-        qDebug() <<dimyq;
-        qDebug() <<dimzq;
         matriz->cutBox(px,px+dimxq,py,py+dimyq,pz,pz+dimzq);
         repaint();
     }
 
 }
-
+/*
 void Ploter::mudaDimx(int dimx)
 {
     x=dimx;
@@ -274,7 +180,7 @@ void Ploter::mudaDimz(int dimz)
     z=dimz;
     repaint();
 }
-
+*/
 void Ploter::mudaRaio(int raio)
 {
     r=raio;
@@ -310,7 +216,6 @@ void Ploter::mudaDimzq(int _dimzq)
 
 void Ploter::mudaPutvoxel()
 {
-    qDebug()<<"clicado";
     putvoxel=true;
     putEsfera= false;
     putElipse = false;
@@ -362,7 +267,6 @@ void Ploter::mudaPutCaixa()
 
 void Ploter::mudacutvoxel()
 {
-    qDebug()<<"clicou";
     putvoxel=false;
     putEsfera= false;
     putElipse = false;
@@ -375,7 +279,6 @@ void Ploter::mudacutvoxel()
 
 void Ploter::mudacutEsfera()
 {
-    qDebug()<<"clicou";
     putvoxel=false;
     putEsfera= false;
     putElipse = false;
@@ -388,7 +291,6 @@ void Ploter::mudacutEsfera()
 
 void Ploter::mudacutElipse()
 {
-    qDebug()<<"clicou";
     putvoxel=false;
     putEsfera= false;
     putElipse = false;
@@ -401,7 +303,6 @@ void Ploter::mudacutElipse()
 
 void Ploter::mudacutCaixa()
 {
-    qDebug()<<"clicou";
     putvoxel=false;
     putEsfera= false;
     putElipse = false;
